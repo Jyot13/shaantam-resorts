@@ -3,9 +3,8 @@
 
 import { motion } from "framer-motion";
 
-// The Leela Kovalam — Indian infinity pool, Kerala
 const POOL =
-  "https://images.unsplash.com/photo-1713843841925-6af6ed0df472?auto=format&fit=crop&w=1920&q=80";
+  "https://images.unsplash.com/photo-1761442663511-2558e561f15e?auto=format&fit=crop&w=1920&q=80";
 
 const usps = [
   "Infinity pool with Himalayan valley views",
