@@ -16,7 +16,7 @@ const stats = [
 
 // Single shared image for the massage group card
 const MASSAGE_IMG =
-  "https://images.unsplash.com/photo-1537128535997-13b690849da9?auto=format&fit=crop&w=1200&q=80";
+  "https://images.unsplash.com/photo-1611073615830-9f76902c10fe?auto=format&fit=crop&w=1200&q=80";
 
 const massages = [
   { name: "Abhyangam",         duration: "60 MINS", desc: "Full body Ayurvedic oil massage — nourishes, relieves fatigue, and promotes longevity." },
