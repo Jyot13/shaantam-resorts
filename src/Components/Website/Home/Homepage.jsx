@@ -6,6 +6,7 @@ import AboutSection from './About'
 import TripAdvisorStrip from './TripAdvisorStrip'
 import PoolSection from './PoolSection'
 import VillasSlider from './VillaSlider'
+import FeaturedRoomSection from './FeaturedRoomSection'
 import DiningSection from './DiningSection'
 import PetVegSection from './PetVegSection'
 import WeddingsSection from './WeddingsSection'
@@ -30,6 +31,7 @@ const Homepage = () => {
       <TripAdvisorStrip />
       <PoolSection />
       <VillasSlider />
+      <FeaturedRoomSection />
       <DiningSection />
       <PetVegSection />
       <WeddingsSection />
