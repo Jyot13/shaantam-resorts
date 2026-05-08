@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Leaf, Clock, Users, Star, UtensilsCrossed, Flame } from "lucide-react";
+import { Leaf, Clock, Users, Star, UtensilsCrossed, Flame, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import TransparentNavbar from "@/Components/Global/TransNav";
 import SectionHeader from "@/Components/Global/Heading";
 
@@ -194,6 +195,61 @@ export default function DiningPage() {
                   >
                     View Menu
                   </motion.button>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Dining Sub-pages ─────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-20 px-6 lg:px-10">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65 }}
+            className="text-center mb-12"
+          >
+            <p className="text-[#CCA665] tracking-[0.3em] text-xs uppercase mb-3">Pure Flavours</p>
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#1a1a1a]">Explore Our Dining Options</h2>
+            <div className="w-10 h-px bg-[#CCA665] mx-auto mt-4" />
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          >
+            {[
+              { img: PRIVATE, tag: "E", title: "Private Dining", desc: "Exclusive culinary journeys in our private dining spaces, perfect for intimate gatherings, celebrations, or a romantic evening under the stars.", href: "/dining/private-dining" },
+              { img: RESTAURANT, tag: "O", title: "Shaantam Restaurant", desc: "Our main restaurant offers a serene atmosphere where guests can enjoy a diverse selection of vegetarian delicacies prepared by our expert chefs.", href: "/dining/restaurant" },
+              { img: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80", tag: "E", title: "Buffet", desc: "Experience exclusive culinary journeys in our private dining spaces. Live stations, multi-cuisine spread and all-inclusive dining.", href: "/dining/buffet" },
+              { img: POOLSIDE, tag: "O", title: "Poolside Dining", desc: "Our main restaurant offers a serene atmosphere where guests can enjoy seasonal vegetarian dishes prepared fresh by our expert chefs.", href: "/dining/poolside-dining" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] } } }}
+                className="group relative overflow-hidden"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img src={item.img} alt={item.title} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#0d0704]/70 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-serif text-xl text-white uppercase tracking-wide">{item.title}</h3>
+                  </div>
+                </div>
+                <div className="bg-[#FAF7F2] border border-[#E8E4DC] border-t-0 p-5">
+                  <p className="text-gray-500 text-xs leading-relaxed mb-4">{item.desc}</p>
+                  <Link
+                    href={item.href}
+                    className="inline-flex items-center gap-1.5 text-[#CCA665] text-[10px] tracking-[0.2em] uppercase font-medium hover:gap-2.5 transition-all duration-200"
+                  >
+                    Read More <ArrowRight size={11} />
+                  </Link>
                 </div>
               </motion.div>
             ))}
