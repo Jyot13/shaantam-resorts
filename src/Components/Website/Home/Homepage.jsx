@@ -12,8 +12,12 @@ import WeddingsSection from './WeddingsSection'
 import DetailBanner from './DetailBanner'
 import SpaWellness from './SpaWellness'
 import ActivitiesSection from './ActivitiesSection'
+import BBCDocumentary from './BBCDocumentary'
 import LocationStrip from './LocationStrip'
-import TestimonialSlider from './Testimonials'
+import VideoTestimonials from './VideoTestimonials'
+import MeetTeamSection from './MeetTeamSection'
+import GoogleReviews from './GoogleReviews'
+import OurClients from './OurClients'
 import CurvedGallerySection from './Gallery'
 
 const Homepage = () => {
@@ -32,8 +36,12 @@ const Homepage = () => {
       <DetailBanner />
       <SpaWellness />
       <ActivitiesSection />
+      <BBCDocumentary />
       <LocationStrip />
-      <TestimonialSlider />
+      <VideoTestimonials />
+      <MeetTeamSection />
+      <GoogleReviews />
+      <OurClients />
       <CurvedGallerySection />
     </div>
   )
