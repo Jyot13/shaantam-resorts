@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import { Play, ExternalLink } from "lucide-react";
 
-const THUMBNAIL =
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1400&q=80";
+const BBC_VIDEO_ID = "7fEXyATb-Nc";
+const BBC_URL = `https://www.youtube.com/watch?v=${BBC_VIDEO_ID}`;
+const THUMBNAIL = `https://img.youtube.com/vi/${BBC_VIDEO_ID}/maxresdefault.jpg`;
 
 export default function BBCDocumentary() {
   return (
@@ -24,12 +25,6 @@ export default function BBCDocumentary() {
               className="inline-flex items-center gap-2 mb-6"
             >
               <div className="flex items-center gap-1.5 bg-[#CC0000] px-3 py-1.5 rounded-sm">
-                <svg viewBox="0 0 40 16" width="40" height="16" fill="white" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0" y="0" width="12" height="16" rx="1" />
-                  <rect x="14" y="0" width="12" height="16" rx="1" />
-                  <rect x="28" y="0" width="12" height="16" rx="1" />
-                  <text x="2" y="12" fontSize="9" fontWeight="bold" fill="#CC0000" fontFamily="serif">BBC</text>
-                </svg>
                 <span className="text-white text-[10px] font-bold tracking-widest">BBC</span>
               </div>
               <span className="text-white/40 text-xs tracking-widest uppercase">Documentary Feature</span>
@@ -68,7 +63,9 @@ export default function BBCDocumentary() {
 
             <motion.a
               variants={{ hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55 } } }}
-              href="#bbc-clip"
+              href={BBC_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ backgroundColor: "#CCA665", color: "#1E1208", borderColor: "#CCA665" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
@@ -80,26 +77,25 @@ export default function BBCDocumentary() {
             </motion.a>
           </div>
 
-          {/* Video thumbnail */}
-          <motion.div
+          {/* YouTube thumbnail — click to open video */}
+          <motion.a
+            href={BBC_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             variants={{ hidden: { opacity: 0, scale: 0.94 }, visible: { opacity: 1, scale: 1, transition: { duration: 1, ease: [0.25, 1, 0.5, 1] } } }}
-            className="relative aspect-video rounded-sm overflow-hidden group cursor-pointer"
-            id="bbc-clip"
+            className="relative aspect-video rounded-sm overflow-hidden group cursor-pointer block"
           >
             <img
               src={THUMBNAIL}
               alt="BBC London Documentary — Rishikesh feature"
               className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
             />
-            {/* Dark overlay */}
             <div className="absolute inset-0 bg-[#0d0704]/40 group-hover:bg-[#0d0704]/20 transition-colors duration-300" />
 
-            {/* BBC badge watermark */}
             <div className="absolute top-4 left-4 bg-[#CC0000] px-2.5 py-1 rounded-sm">
               <span className="text-white text-xs font-bold tracking-widest">BBC LONDON</span>
             </div>
 
-            {/* Play button */}
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
                 whileHover={{ scale: 1.1 }}
@@ -111,14 +107,13 @@ export default function BBCDocumentary() {
               </motion.div>
             </div>
 
-            {/* Caption bar */}
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-[#0d0704]/90 to-transparent">
               <p className="text-white/90 text-sm font-serif leading-snug">
-                "Shaantam Resort — Prideful Part of BBC London's Rishikesh Documentary"
+                "Shaantam Resort — Proudly featured in BBC London's Rishikesh Documentary"
               </p>
-              <p className="text-white/40 text-xs mt-1 tracking-wide">Click to see the clipping</p>
+              <p className="text-white/40 text-xs mt-1 tracking-wide">Click to watch on YouTube</p>
             </div>
-          </motion.div>
+          </motion.a>
         </motion.div>
       </div>
     </section>

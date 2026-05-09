@@ -1,13 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PawPrint, Leaf, ChevronRight } from "lucide-react";
+import { PawPrint, Leaf, Waves, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 const PET_IMG =
   "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=80";
 const VEG_IMG =
   "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80";
+const POOL_IMG =
+  "https://images.unsplash.com/photo-1536745511564-a5fa6e596e7b?auto=format&fit=crop&w=1200&q=80";
 
 const cards = [
   {
@@ -30,11 +32,21 @@ const cards = [
     href: "/dining",
     accent: "#86EFAC",
   },
+  {
+    img: POOL_IMG,
+    icon: Waves,
+    eyebrow: "Aqua Serenity",
+    title: "Where Heaven\nMeets Water",
+    highlights: ["Infinity pool with valley views", "Temperature-controlled year-round", "Poolside dining & sundowners", "Private loungers & cabanas"],
+    cta: "Explore the Pool",
+    href: "/experiences",
+    accent: "#7DD3FC",
+  },
 ];
 
 export default function PetVegSection() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2">
+    <section className="grid grid-cols-1 md:grid-cols-3">
       {cards.map((card, i) => (
         <div key={i} className="relative h-120 overflow-hidden group">
           {/* Background */}
